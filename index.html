@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Todo App">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,add_circle,close,delete,edit_square" />
+        <link rel="stylesheet" href="styles.css">
+        <title>Todo App</title>
+    </head>
+    <body>
+        <main>
+            <div class="app-body">
+                <header class="app-header">
+                    <h1 class="app-title">Todo List</h1>
+                    <button id="new-task" class="button pill-button button-theme button-add">
+                        <span class="material-symbols-outlined icon-add">add</span>
+                        <span>New task</span>
+                    </button>
+                </header>
+                <div id="task-list" class="task-list"></div>
+                <form id="task-form" class="task-form hidden">
+                    <div class="task-title-row">
+                        <label for="task-title" class="task-form-label">Title</label>
+                        <button type="button" id="close-task-form" class=" button icon-button">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    <input id="task-title" class="task-form-input" type="text" required>
+                    <label for="task-date" class="task-form-label">Date</label>
+                    <input id="task-date" class="task-form-input" type="datetime-local">
+                    <label for="task-description" class="task-form-label">Description</label>
+                    <textarea id="task-description" class="task-form-input" rows="5"></textarea>
+                    <button class="button pill-button button-theme button-add" type="submit">
+                        <span id="form-button-icon" class="material-symbols-outlined icon-add">add</span>
+                        <span id="form-button-text">Add task</span>
+                    </button>
+                </form>
+                <dialog id="discard-dialog" class="dialog">
+                    <form method="dialog">
+                        <p class="dialog-message">Discard unsaved changes?</p>
+                        <div class="dialog-buttons">
+                            <button id="close-dialog" class="button button-theme pill-button dialog-button">Cancel</button>
+                            <button id="discard-changes" class="button pill-button button-light dialog-button">Discard</button>
+                        </div>
+                    </form>
+                </dialog>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
